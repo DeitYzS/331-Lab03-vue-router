@@ -1,12 +1,12 @@
-
 <template>
-  <div class="event-class">
-    <div class="event-card">
-      <!-- <EventOrganizer></EventOrganizer> -->
-      <span>@ {{ event?.time }} on {{ event?.date }}</span>
-      <h4>{{ event?.title }}</h4>
+  <RouterLink class="event-link" :to="{name: 'event-detail', params:{id: event?.id} }">
+    <div class="event-class">
+      <div class="event-card">
+        <span>@ {{ event?.time }} on {{ event?.date }}</span>
+        <h4>{{ event?.title }}</h4>
+      </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">
@@ -21,7 +21,6 @@ defineProps({
 })
 </script>
 
-
 <style scoped>
 .event-card {
   padding: 20px;
@@ -35,4 +34,10 @@ defineProps({
   transform: scale(1.01);
   box-shadow: 0 3px 12 px 0 rgba(0, 0, 0, 0.2);
 }
+
+.event-link {
+  color:#2c3e50;
+  text-decoration: none;
+}
+
 </style>
