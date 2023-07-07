@@ -1,10 +1,19 @@
 
+<template>
+  <div class="event-class">
+    <div class="event-card">
+      <!-- <EventOrganizer></EventOrganizer> -->
+      <span>@ {{ event?.time }} on {{ event?.date }}</span>
+      <h4>{{ event?.title }}</h4>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import type { EventItem } from '@/type'
 import type { PropType } from 'vue'
-import { ref } from 'vue'
 
-const props = defineProps({
+defineProps({
   event: {
     type: Object as PropType<EventItem>,
     require: true
@@ -49,23 +58,13 @@ const props = defineProps({
 </script>
 
 
-<template>
-  <div class="event-class">
-    <div class="event-card">
-      <span>@{{ event.time }} on {{ event.date }}</span>
-      <h4>{{ event.title }}</h4>
-    </div>
-  </div>
-</template>
-
-
 <style scoped>
 .event-card {
   padding: 20px;
   width: 250px;
   cursor: pointer;
   border: 1px solid #39495c;
-  margin: 18px;
+  margin-bottom: 18px;
 }
 
 .event-card:hover {

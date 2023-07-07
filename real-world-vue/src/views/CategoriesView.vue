@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type { EventItem } from '@/type';
-import EventCard from '../components/EventCard.vue'
+import EventOrganizerCard from '@/components/EventOrganizerCard.vue';
 import { ref } from 'vue'
 // import TheWelcome from '@/components/TheWelcome.vue';
 
 const events = ref<EventItem[]>([
   {
     id: 5928101,
-    category: 'animal welfare',
+    category: 'Animal welfare',
     title: 'Cat Adoption Day',
     description: 'Find your new feline friend at this event',
     location: 'Meow Town',
@@ -18,7 +18,7 @@ const events = ref<EventItem[]>([
   },
   {
     id:4582797,
-    category: 'food',
+    category: 'Food',
     title: 'Community Gaardening',
     description: 'Join us as we tend to the community edible plants',
     location: 'Flora City',
@@ -29,7 +29,7 @@ const events = ref<EventItem[]>([
   },
   {
     id: 5928101,
-    category: 'sustainability',
+    category: 'Sustainability',
     title: 'Beach Cleanup',
     description: 'Help pick up trash along the shore.',
     location: 'Playa Del Carmen',
@@ -44,8 +44,7 @@ const events = ref<EventItem[]>([
 
 <template>
   <main>
-    <!-- <TheWelcome /> -->
-    <EventCard v-for="event in events" :key="event.id" :event="event"></EventCard>
+    <EventOrganizerCard v-for="event in events" :key="event.id" :event="event"></EventOrganizerCard>
   </main>
 </template>
 
