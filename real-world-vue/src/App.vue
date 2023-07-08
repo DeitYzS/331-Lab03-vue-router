@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
+const sizes = ref<number>(3);
 </script>
 
 <template>
@@ -19,10 +21,22 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
 
-  <RouterView />
+  <div class="size">
+    <label > Size : </label>
+    <input class="sizes" type="number" v-model="sizes"> 
+  </div>
+
+  <RouterView :size="sizes" />
 </template>
 
 <style scoped>
+
+.sizes {
+  width: 50px;
+  background-color: #2c3e50;
+  color: aquamarine;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

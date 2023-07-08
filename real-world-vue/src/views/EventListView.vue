@@ -12,6 +12,9 @@
     </RouterLink>
   </div>
 
+  
+  
+
 
   </main>
 </template>
@@ -29,15 +32,15 @@ const props = defineProps({
   page: {
     type: Number,
     required: true
+  },
+  size: {
+    type: Number,
+    required: true
   }
-})
-EventService.getEvent(2, props.page)
-  .then((res: AxiosResponse<EventItem[]>) => {
-    events.value = res.data
 })
 
 watchEffect( () => {
-  EventService.getEvent(2, props.page)
+  EventService.getEvent(props.size, props.page)
     .then( (res: AxiosResponse<EventItem[]>) => {
         events.value = res.data
         totalEvent.value = res.headers['x-total-count']
@@ -45,7 +48,7 @@ watchEffect( () => {
 })
 
 const hasNextPage = computed (() => {
-  const totalPages = Math.ceil(totalEvent.value / 2)
+  const totalPages = Math.ceil(totalEvent.value / props.size)
   return props.page.valueOf() < totalPages
 })
 
@@ -70,5 +73,7 @@ const hasNextPage = computed (() => {
 #prev-next {
   text-align: right;
 }
+
+
 
 </style>
