@@ -1,5 +1,8 @@
 <template>
-  <RouterLink class="event-link" :to="{name: 'event-detail', params:{id: event?.id} }">
+  <RouterLink 
+    class="event-link" 
+    :to="{name: 'event-detail', params:{id: event?.id} }"
+  >
     <div class="event-class">
       <div class="event-card">
         <span>@ {{ event?.time }} on {{ event?.date }}</span>
@@ -33,6 +36,7 @@ defineProps({
 .event-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12 px 0 rgba(0, 0, 0, 0.2);
+  color: whitesmoke;
 }
 
 .event-link {

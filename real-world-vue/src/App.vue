@@ -11,10 +11,10 @@ import { RouterLink, RouterView } from 'vue-router'
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/category">Categories</RouterLink>
-        <RouterLink to="/student">Student</RouterLink>
+        <RouterLink :to= "{name: 'event-list'}">Home</RouterLink>
+        <RouterLink :to= "{name: 'about'}">About</RouterLink>
+        <RouterLink :to= "{name: 'category'}">Categories</RouterLink>
+        <RouterLink :to= "{name: 'student'}">Student</RouterLink>
       </nav>
     </div>
   </header>
@@ -34,7 +34,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  width: fit-content;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;

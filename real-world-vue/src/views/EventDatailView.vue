@@ -1,6 +1,6 @@
 <template>
   <main>
-    <event-detail></event-detail>
+    <EventDetail :event="event" ></EventDetail>
   </main>
 </template>
 
