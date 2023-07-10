@@ -1,6 +1,24 @@
 <template>
   <main>
-    <EventDetail :event="event" ></EventDetail>
+    <!-- <EventDetail :event="event" ></EventDetail> -->
+    <div v-if="event">
+      <h1>{{event.title}}</h1>
+      <div id="nav">
+        <router-link :to="{name: 'EventDetails', params: { id }}">
+          Details
+        </router-link>
+
+        <router-link :to="{name: 'EventRegister', params: { id }}">
+          Register
+        </router-link>
+
+        <router-link :to="{name: 'EventEdit', params: { id }}">
+          Edit
+        </router-link>
+      </div>
+      <p>{{event.time}} on {{event.date}} @ {{ event.location }}</p>
+      <p>{{ event.description }}</p>
+    </div>>
   </main>
 </template>
 
