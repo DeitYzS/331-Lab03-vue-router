@@ -30,7 +30,6 @@ const sizes = ref<number>(3);
 </template>
 
 <style scoped>
-
 .sizes {
   width: 50px;
   background-color: #2c3e50;
